@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.073c9b0a.css",
-    "main.js": "/static/js/main.78445702.js",
+    "main.css": "/static/css/main.d2e106e0.css",
+    "main.js": "/static/js/main.e3b013dc.js",
     "static/js/787.8b9403e5.chunk.js": "/static/js/787.8b9403e5.chunk.js",
     "static/media/suvamimage.png": "/static/media/suvamimage.6116c08d780a7c317685.png",
     "static/media/Suvam_Panda_Resume.pdf": "/static/media/Suvam_Panda_Resume.6d5093ecf642312f1327.pdf",
     "index.html": "/index.html",
-    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
-    "main.78445702.js.map": "/static/js/main.78445702.js.map",
+    "main.d2e106e0.css.map": "/static/css/main.d2e106e0.css.map",
+    "main.e3b013dc.js.map": "/static/js/main.e3b013dc.js.map",
     "787.8b9403e5.chunk.js.map": "/static/js/787.8b9403e5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.78445702.js"
+    "static/css/main.d2e106e0.css",
+    "static/js/main.e3b013dc.js"
   ]
 }
