@@ -1,5 +1,5 @@
 import { Icon } from "@chakra-ui/icons";
-
+import "../App.css";
 import {
   Box,
   Flex,
@@ -13,9 +13,10 @@ import {
   RangeSliderFilledTrack,
   Text,
   HStack,
+  Link,
 } from "@chakra-ui/react";
 import React from "react";
-
+// import { Link } from "react-router-dom";
 function Contact() {
   return (
     <Box h="auto">
@@ -26,11 +27,11 @@ function Contact() {
           </RangeSliderTrack>
         </RangeSlider>
       </div>
-      <Text fontSize={"30px"} color="#FFEF03" fontWeight="semibold">
+      <Text fontSize={"30px"} color="#FFEF03" fontWeight="bold">
         Contacts
       </Text>
       <Flex
-        id="Contact"
+        id="Contacts"
         display={{
           base: "inherit",
           sm: "inherit",
@@ -85,7 +86,7 @@ function Contact() {
                 placeholder={"Enter Your Message..."}
               />
             </Box>
-            <Button color={"#2C7598"} mt="20px">
+            <Button as={"Link"} href="google.com" color={"#2C7598"} mt="20px">
               SUBMIT
             </Button>
           </VStack>
@@ -105,13 +106,38 @@ function Contact() {
           />
         </Box>
       </Flex>
-      <HStack  h="100px"  w="20%" m="auto" mb={"60px"} justifyContent={"center"}>
+      <HStack h="100px" w={{md:"30%",sm:"50%"}} m="auto" mb={"30px"} justifyContent={"center"}>
         {/* all social icons */}
-        <Image className="icons" boxShadow="rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px" m="auto" p="10px" backgroundColor={"white"}  borderRadius="10px" w="60px" h="60px"  src="https://www.iconpacks.net/icons/1/free-icon-linkedin-94.png"/>
-        <Image className="icons" boxShadow="rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px" m="auto" p="10px" backgroundColor={"white"}  borderRadius="10px" w="60px" h="60px"  src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/>\
-        <Image className="icons" boxShadow="rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px" m="auto" p="10px" backgroundColor={"white"}  borderRadius="10px" w="60px" h="60px"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-gaFBPz1yn-ic4TgN86J1sg_STn-o7svkOkKFwXur&s"/>
-        <Image className="icons"      boxShadow="rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px"m="auto" p="10px" backgroundColor={"white"}  borderRadius="10px" w="60px" h="60px"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDtKm0I-RX-tN2Aw8zJ76ZvA4eDqDvxVqICg&usqp=CAU"/>
+        <Link href="https://www.linkedin.com/in/suvam-swagatam-panda-9ab359236/">
+          <Image
+            className="icons"
+            src="https://www.iconpacks.net/icons/1/free-icon-linkedin-94.png"
+          />
+        </Link>
+        <Link href="https://github.com/suvam778781">
+        <Image
+          className="icons"
+          src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+        />
+        </Link>
+
+<Link href="mailto:suvamswagatamp@gmail.com">
+        <Image
+          className="icons"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-gaFBPz1yn-ic4TgN86J1sg_STn-o7svkOkKFwXur&s"
+        />
+</Link>
+<Link href="tel:+917008369373">
+        <Image
+          className="icons"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDtKm0I-RX-tN2Aw8zJ76ZvA4eDqDvxVqICg&usqp=CAU"
+        />
+        </Link>
       </HStack>
+
+      <Text color={"#FFEF03"} fontWeight="semibold" fontSize={"18px"} pb="20px">
+        Designed & Built by Suvam Panda, © 2022 All rights reserved
+      </Text>
     </Box>
   );
 }

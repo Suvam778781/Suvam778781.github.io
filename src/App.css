@@ -35,7 +35,41 @@
     transform: rotate(360deg);
   }
 }
+.icons{
+  box-shadow:rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+   margin:auto;
+    padding:10px;
+   background-color:white; 
+   border-radius:10px;
+   width:50px ;
+   height:50px;
+  transition: 0.4s;
+}
+.icons:hover{
+transform: scale(1.2);
+}
+ .project_box:hover{
+  transition: 0.4s;
+  transform: scale(1.05);
+} 
+ .project_image > Image:hover{
+  transform: scale(1.05);
+  transition: 0.4s;
+}
+ .project_box{
+  transition: 0.4s; 
 
+} 
 
-
-
+.skillsA{
+border-radius: 5px;
+margin: auto;
+align-items: center;
+justify-content: center;
+width: 160px;
+height: 160px;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+padding-top: 50px;
+padding-bottom: 50px;
+background-color: white;
+}

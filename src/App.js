@@ -9,7 +9,7 @@ import Projects from './Components/Projects';
 import About from './Components/About';
 function App() {
   return (
-    <div style={{backgroundColor:"#2C7598"}} className="App">
+    <div style={{backgroundColor:"#2C7598",overflow:"hidden"}} w="100%"  className="App">
     <Navbar resume={resume} image={suvamimage}/>
     <About/>
   <Github1/>
