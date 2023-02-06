@@ -1,23 +1,11 @@
 
 import { HamburgerIcon } from "@chakra-ui/icons";
+
 import {
   Box,
   Flex,
-  Avatar,
   Link,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
-  useColorModeValue,
-  Stack,
-  useColorMode,
-  Center,
-  Container,
-  position,
   Image,
   HStack,
   VStack,
@@ -29,11 +17,56 @@ import {
   IconButton,
   DrawerFooter,
   Drawer,
+  useToast,
+  
 } from "@chakra-ui/react";
-import { useRef } from "react";
+import { Switch } from "@chakra-ui/switch";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Resume from "../Resume/Resume";
-export default function Navbar({resume,image}) {
+import '../App.css';
+import { useEffect } from "react";
+export default function Navbar({resume,image,setbackground,background}) {
+const [value,setvalue]=useState(false)
+const handleRedirect=()=>{
+
+  window.open("https://1drv.ms/b/s!Agy8Y5ocUlKbjTxTJ_rJY8TvltFn?e=OpiAEk")
+  
+    }
+
+const toast=useToast()
+const handlecheck=(e)=>{
+setvalue(e.target.checked)
+}
+useEffect(()=>{
+
+  if(value){
+
+    setbackground("black")
+    toast({
+      title: 'Theme.',
+      description:"Dark Theme Activated",
+      status: 'warning',
+      duration: 1000,
+      isClosable: true,
+      // colorScheme:"red",
+  
+    })
+  }  
+  else if(!value){
+    setbackground("#2C7598")   
+    toast({
+      title: 'Theme.',
+      description:"Light Theme Activated",
+      status: 'success',
+      duration: 1000,
+      isClosable: true,
+    })
+   
+  }  
+
+},[value])
+
   const btnRef = useRef();
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -58,13 +91,13 @@ export default function Navbar({resume,image}) {
       >
         <HStack justifyContent={"space-between"} w="90%" m="auto">
           <VStack>
-            <Link   display={{
+            <Link fontFamily={"cursive"} fontSize="25px" _hover={{textDecoration:"none",color:"white"}} fontWeight={"bold"} color="#FFEF03" font  display={{
               base: "none",
               md: "inherit",
               lg: "inherit",
               xl: "inherit",
               "2xl": "inherit",
-            }}>Home</Link>
+            }}>@Suvam</Link>
           </VStack>
           <HStack
             display={{
@@ -82,14 +115,15 @@ export default function Navbar({resume,image}) {
               "2xl": "140px",
             }}
           >
-            <Link  href="#Abouts">About</Link>
-            <Link href="#Projects">Projects</Link>
-            <Link  href="#Skills">Skills</Link>
-            <Link href="#Contacts">Contact</Link>
-            <Link href={resume} download="Suvam_Panda_Resume.pdf">Resume</Link>
+            <Switch  colorScheme={"#FFEF03"} isChecked={value} onChange={handlecheck}/>
+            <Link className="Nav_link"  href="#Abouts">About</Link>
+            <Link className="Nav_link" href="#Projects">Projects</Link>
+            <Link className="Nav_link" href="#Skills">Skills</Link>
+            <Link className="Nav_link" href="#Contacts">Contact</Link>
+            <Link  onClick={handleRedirect} className="Nav_link" href={resume} download="Suvam_Panda_Resume.pdf">Resume</Link>
           </HStack>
         </HStack>
-        <Humburger resume={resume} />
+        <Humburger  resume={resume} handlecheck={handlecheck} value={value} />
       </Flex>
       <Flex display={{sm:"block",md:"flex",lg:"flex"}} backgroundImage={image} backgroundRepeat="no-repeat" h="650px" w="100%" margin={"auto"} mb="-20px" mt="50px">
         <Box  style={{height: "350px" ,marginTop:"50px" }} pt={{sm:"40px"}} w={{sm:"100%",md:"40%",lg:"40%"}} m="auto" justifyContent={"center"} alignItems="center">
@@ -114,7 +148,7 @@ export default function Navbar({resume,image}) {
   );
 }
 
-export function Humburger({resume}) {
+export function Humburger({resume,value,handlecheck}) {
   const btnRef = useRef();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -150,6 +184,10 @@ export function Humburger({resume}) {
             <Image w="140px" src="" />
           </Link>
           <DrawerBody>
+
+          <Switch colorScheme={"#FFEF03"} isChecked={value} onChange={handlecheck}/>
+          <br/>
+
             <Link href="#Abouts" onClick={onClose} _hover={{ textDecoration: "none", color: "grey" }}>
               About
             </Link>

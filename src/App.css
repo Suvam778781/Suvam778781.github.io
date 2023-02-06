@@ -53,6 +53,7 @@ transform: scale(1.2);
   transform: scale(1.05);
 } 
  .project_image > Image:hover{
+  
   transform: scale(1.05);
   transition: 0.4s;
 }
@@ -72,4 +73,18 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 padding-top: 50px;
 padding-bottom: 50px;
 background-color: white;
+transition: 0.5s;
+}
+.skillsA:hover{
+  transition: 0.5s;
+  transform: scale(1.2);
+
+
+}
+
+.Nav_link:hover{
+
+color:#FFEF03;
+text-decoration: none;
+  
 }

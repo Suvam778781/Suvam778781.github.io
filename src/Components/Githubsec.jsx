@@ -30,12 +30,7 @@ export const Github1 = () => {
           </RangeSliderThumb>
         </RangeSlider>
       </div>
-      <Text
-        fontWeight={"bold"}
-        my="13px"
-        fontSize={"30px"}
-        color={"#FFEF03"}
-      >
+      <Text fontWeight={"bold"} my="13px" fontSize={"30px"} color={"#FFEF03"}>
         Github Stats
       </Text>
       <Grid
@@ -67,26 +62,34 @@ export const Github1 = () => {
           />
         </Box>
       </Grid>
-      <Box className="StatsChild2">
+      <Box w="100%" className="StatsChild2">
         <Image
           margin={"auto"}
           h="190px"
-          w={{ md: "200px", sm: "180px" }}
+          w={{
+            md: "200px",
+            sm: "180px",
+            lg: "500px",
+            xl: "500px",
+            "2xl": "500px",
+          }}
           // align="center"
           src="https://github-readme-stats.vercel.app/api/top-langs/?username=suvam778781&theme=radical" //launguages
         />
       </Box>
-<Divider/>
-       {/* <Box w={{lg,md,xl,"2xl":"70%",base:"90%"}}  margin={"auto"} my={10} >
-     <Text color={"#FFEF03"} fontWeight="semibold">GitHub Calender:</Text>
-    <GitHubCalendar
+      <Divider />
+      <Box w={{ lg: "70%", "2xl": "70%", base: "90%" }} margin={"auto"} my={10}>
+        <Text color={"#FFEF03"} fontWeight="semibold">
+          GitHub Calender:
+        </Text>
+        <GitHubCalendar
           username="suvam778781"
-          blockSize={25} 
+          blockSize={25}
           blockMargin={5}
           // theme={"yellow"}
           fontSize={18}
         />
-        </Box> */}
+      </Box>
 
       {/* <Image margin={"auto"} width="90%" h="250px" src="https://camo.githubusercontent.com/d9d6e1e293e6a1d2f307487eda63744dc07603b68d70af076a3b350b73e04fb5/68747470733a2f2f61637469766974792d67726170682e6865726f6b756170702e636f6d2f67726170683f757365726e616d653d737576616d3737383738312662675f636f6c6f723d30443131313726636f6c6f723d323139366633266c696e653d32313936663326706f696e743d464646464646266c61796f75743d636f6d70616374"/> */}
     </div>

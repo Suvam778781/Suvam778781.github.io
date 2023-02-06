@@ -14,10 +14,41 @@ import {
   Text,
   HStack,
   Link,
+  useToast,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+  
 } from "@chakra-ui/react";
 import React from "react";
+// import { Form } from "react-router-dom";
 // import { Link } from "react-router-dom";
+
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 function Contact() {
+
+  const toast =useToast()
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm('service_ojdm98v', 'template_bh9kh3d', form.current, 'nvXz-fAR7B8CLR7zJ')
+      .then((result) => {
+          
+        alert("Email Send Succesfully")
+        e.target.reset()
+      }, (error) => {
+        alert("Email Sending Failed Please Try Again")
+        e.target.reset()
+      });
+
+  };
+
+
+
   return (
     <Box h="auto">
       <div className="slider">
@@ -61,34 +92,45 @@ function Contact() {
             my="30px"
             p="20px"
           >
-            <Box w="100%">
+
+            <form style={{width:"100%",lineHeight:"65px"}} ref={form} onSubmit={sendEmail}>
+            {/* <Box w="100%"> */}
               <Input
                 w="90%"
                 backgroundColor="#FFEF03"
                 _placeholder={{ color: "#2C7598" }}
                 placeholder={"Enter Name..."}
+                name="user_name"
+                required
+              />
+            {/* </Box> */}
+            <Box w="100%">
+              <Input
+                w="90%"
+                name="user_email"
+                type={"email"}
+                _placeholder={{ color: "#2C7598" }}
+                backgroundColor="#FFEF03"
+                placeholder={"Enter Email..."}
+              required
+              
               />
             </Box>
             <Box w="100%">
               <Input
                 w="90%"
-                _placeholder={{ color: "#2C7598" }}
-                backgroundColor="#FFEF03"
-                placeholder={"Enter Email..."}
-              />
-            </Box>
-            <Box w="100%">
-              <Input
-                w="90% "
                 h="60px"
+                name="message"
                 _placeholder={{ opacity: 1, color: "#2C7598" }}
                 backgroundColor="#FFEF03"
                 placeholder={"Enter Your Message..."}
+                required
               />
             </Box>
-            <Button as={"Link"} href="google.com" color={"#2C7598"} mt="20px">
-              SUBMIT
-            </Button>
+            <Button type="submit" backgroundColor={"#FFEF03"}>SUBMIT</Button>
+            {/* <Input  type="" value="Send"  as={"Link"} href="google.com" color={"#2C7598"} mt="20px" placeholder="SUBMIT"/> */}
+
+            </form>
           </VStack>
         </Box>
         <Box
@@ -136,7 +178,7 @@ function Contact() {
       </HStack>
 
       <Text color={"#FFEF03"} fontWeight="semibold" fontSize={"18px"} pb="20px">
-        Designed & Built by Suvam Panda, © 2022 All rights reserved
+        Designed & Built by Suvam Panda, © 2023 All rights reserved
       </Text>
     </Box>
   );
