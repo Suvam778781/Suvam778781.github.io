@@ -35,6 +35,8 @@ export const Github1 = () => {
       </Text>
       <Grid
         templateColumns={{
+
+
           base: "repeat(1,1fr)",
           lg: "repeat(2,1fr)",
           xl: "repeat(2,1fr)",
@@ -45,24 +47,27 @@ export const Github1 = () => {
         alignItems="center"
         margin={"auto"}
       >
-        <Box className="StatsChild1">
-          <Image
+        <Box className="StatsChild1" pt="10px" h="200px"  m="auto">
+          <Image 
+          
             w="500px"
             margin={"auto"}
             // align="left"
             src="https://github-readme-streak-stats.herokuapp.com?user=suvam778781&theme=radical"
           />
         </Box>
-        <Box w="100%">
+        <Box  h="200px"  m="auto">
           <Image
+          p="10px"
             margin={"auto"}
             w="500px"
+          
             // align="left"
             src="https://github-readme-stats.vercel.app/api?username=suvam778781&theme=radical&count_private=true&show_icons=true" //stats
           />
         </Box>
       </Grid>
-      <Box w="100%" className="StatsChild2">
+      <Box w="100%" className="StatsChild2" mb="20px">
         <Image
           margin={"auto"}
           h="190px"
@@ -90,7 +95,6 @@ export const Github1 = () => {
           fontSize={18}
         />
       </Box>
-
       {/* <Image margin={"auto"} width="90%" h="250px" src="https://camo.githubusercontent.com/d9d6e1e293e6a1d2f307487eda63744dc07603b68d70af076a3b350b73e04fb5/68747470733a2f2f61637469766974792d67726170682e6865726f6b756170702e636f6d2f67726170683f757365726e616d653d737576616d3737383738312662675f636f6c6f723d30443131313726636f6c6f723d323139366633266c696e653d32313936663326706f696e743d464646464646266c61796f75743d636f6d70616374"/> */}
     </div>
   );

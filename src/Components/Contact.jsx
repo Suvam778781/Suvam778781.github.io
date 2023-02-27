@@ -46,9 +46,6 @@ function Contact() {
       });
 
   };
-
-
-
   return (
     <Box h="auto">
       <div className="slider">
@@ -148,34 +145,26 @@ function Contact() {
           />
         </Box>
       </Flex>
-      <HStack h="100px" w={{md:"30%",sm:"50%"}} m="auto" mb={"30px"} justifyContent={"center"}>
+      <HStack h="100px" w={{md:"30%",sm:"50%"}} m="auto" mb={"10px"} justifyContent={"center"}>
         {/* all social icons */}
-        <Link href="https://www.linkedin.com/in/suvam-swagatam-panda-9ab359236/">
+        <Link  href="https://www.linkedin.com/in/suvam-swagatam-panda-9ab359236/" target={"_blank"}>
           <Image
             className="icons"
             src="https://www.iconpacks.net/icons/1/free-icon-linkedin-94.png"
           />
         </Link>
-        <Link href="https://github.com/suvam778781">
+        <Link href="https://github.com/suvam778781" target={"_blank"}>
         <Image
           className="icons"
           src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
         />
         </Link>
-
-<Link href="mailto:suvamswagatamp@gmail.com">
-        <Image
-          className="icons"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-gaFBPz1yn-ic4TgN86J1sg_STn-o7svkOkKFwXur&s"
-        />
-</Link>
-<Link href="tel:+917008369373">
-        <Image
-          className="icons"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDtKm0I-RX-tN2Aw8zJ76ZvA4eDqDvxVqICg&usqp=CAU"
-        />
-        </Link>
       </HStack>
+
+<Container w="300px" mb="20px" textAlign={"left"}>
+<Text color={"white"} fontWeight={"semibold"} fontSize={"20px"}>Contact: <span style={{fontSize:"15px",fontWeight:"400"}} > +917008369373</span></Text>
+<Text color={"white"} fontWeight={"semibold"} fontSize={"20px"}>Gmail: <span style={{fontSize:"15px",fontWeight:"400"}} > suvamswagatamp@gmail.com</span></Text>
+</Container>
 
       <Text color={"#FFEF03"} fontWeight="semibold" fontSize={"18px"} pb="20px">
         Designed & Built by Suvam Panda, © 2023 All rights reserved

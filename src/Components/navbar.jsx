@@ -115,18 +115,18 @@ useEffect(()=>{
               "2xl": "140px",
             }}
           >
-            <Switch  colorScheme={"#FFEF03"} isChecked={value} onChange={handlecheck}/>
+            {/* <Switch  colorScheme={"#FFEF03"} isChecked={value} onChange={handlecheck}/> */}
             <Link className="Nav_link"  href="#Abouts">About</Link>
             <Link className="Nav_link" href="#Projects">Projects</Link>
             <Link className="Nav_link" href="#Skills">Skills</Link>
             <Link className="Nav_link" href="#Contacts">Contact</Link>
-            <Link  onClick={handleRedirect} className="Nav_link" href={resume} download="Suvam_Panda_Resume.pdf">Resume</Link>
+            <Link  onClick={handleRedirect} className="Nav_link" href={resume} download="fw20_0118-Suvam-Panda-Resume.pdf">Resume</Link>
           </HStack>
         </HStack>
         <Humburger  resume={resume} handlecheck={handlecheck} value={value} />
       </Flex>
-      <Flex display={{sm:"block",md:"flex",lg:"flex"}} backgroundImage={image} backgroundRepeat="no-repeat" h="650px" w="100%" margin={"auto"} mb="-20px" mt="50px">
-        <Box  style={{height: "350px" ,marginTop:"50px" }} pt={{sm:"40px"}} w={{sm:"100%",md:"40%",lg:"40%"}} m="auto" justifyContent={"center"} alignItems="center">
+      <Flex display={{sm:"block",md:"flex",lg:"flex"}} backgroundImage={image} backgroundRepeat="no-repeat" h={{base:"700px",md:"550px",lg:"650px",xl:"650px"}} w="100%" margin={"auto"} mb="-20px" mt="50px">
+        <Box  style={{height: "290px" ,marginTop:"40px" }} pl="14px" pt={{sm:"30px"}} w={{sm:"100%",md:"40%",lg:"40%"}} m="auto" justifyContent={"center"} alignItems="center">
           <Image 
           style={{
             boxShadow: "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",
@@ -141,7 +141,7 @@ useEffect(()=>{
         />
         </Box> 
         <Box style={{ height: "500px" }} w={{sm:"100%",md:"60%",lg:"60%"}}>
-          <Resume />
+          <Resume resume={resume} />
         </Box>
       </Flex>
     </div>
@@ -204,7 +204,8 @@ export function Humburger({resume,value,handlecheck}) {
               Contact
             </Link>
             <Divider py={4} />
-            <Link  href={resume}  onClick={onClose}  download="Suvam_Panda_Resume.pdf" _hover={{ textDecoration: "none", color: "grey" }}>
+            <Link  href={resume}  onClick={onClose}  download="fw20_0118-Suvam-Panda-Resume.pdf" _hover={{ textDecoration: "none", color: "grey" }}>
+          
               Resume
             </Link>
           </DrawerBody>

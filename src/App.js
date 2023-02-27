@@ -1,4 +1,4 @@
-import resume from './Suvam_Panda_Resume.pdf';
+import resume from './fw20_0118-Suvam-Panda-Resume.pdf';
 import suvamimage from "./suvamimage.png"
 import './App.css';
 import Navbar from './Components/navbar';

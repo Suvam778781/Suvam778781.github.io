@@ -32,7 +32,6 @@ const About = () => {
         // justifyContent="center"
         className="About"
         textDecorationLine={"unset"}
-    
       >
         <Text fontSize={"30px"} color="#FFEF03" mt="20px" fontWeight="bold">
           About
@@ -41,7 +40,6 @@ const About = () => {
         <Box fontFamily={"sans-serif"}  color={"white"} fontSize={{base:"12px",md:"14px",lg:"16px",xl:"18px","2xl":"18px"}}>
           <Text color={"yellow"}>I'm Suvam Swagatam Panda</Text>
           {/* Description */}
-
           <Box m="auto" >
           <p >
             Observant & detail-oriented aspiring full-stack web developer with a
@@ -51,16 +49,9 @@ const About = () => {
             environment.
           </p>
           </Box>
-          <Text fontSize={"15px"}>
-            <Link href="mailto:suvamswagatamp@gmail.com" px="10px">
-            <EmailIcon boxSize={10} _hover={{color:"#FFEF03"}} />
-            </Link>
-         
-          </Text>
         </Box>
       </Box>
     </div>
   );
 };
-
 export default About;
