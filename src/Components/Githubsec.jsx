@@ -35,45 +35,46 @@ export const Github1 = () => {
       </Text>
       <Grid
         templateColumns={{
-
-
           base: "repeat(1,1fr)",
+
           lg: "repeat(2,1fr)",
           xl: "repeat(2,1fr)",
           "2xl": "repeat(2,1fr)",
         }}
         width="80%"
-        justifyContent={"center"}
+        pb="30px"
         alignItems="center"
         margin={"auto"}
+        rowGap={"1"}
       >
-        <Box className="StatsChild1" pt="10px" h="200px"  m="auto">
-          <Image 
-          
+        <Box m="auto">
+          <Image
             w="500px"
             margin={"auto"}
             // align="left"
             src="https://github-readme-streak-stats.herokuapp.com?user=suvam778781&theme=radical"
           />
         </Box>
-        <Box  h="200px"  m="auto">
+        <Box
+          p={{ base: "0", md: "16px", lg: "16px", xl: "16px" }}
+          alignItems={"center"}
+          m="auto"
+        >
           <Image
-          p="10px"
             margin={"auto"}
             w="500px"
-          
             // align="left"
             src="https://github-readme-stats.vercel.app/api?username=suvam778781&theme=radical&count_private=true&show_icons=true" //stats
           />
         </Box>
       </Grid>
-      <Box w="100%" className="StatsChild2" mb="20px">
-        <Image
+      {/* <Box w="100%" className="StatsChild2" mb="20px">
+        <Image 
           margin={"auto"}
-          h="190px"
+          h="170px"
           w={{
-            md: "200px",
-            sm: "180px",
+            md: "400px",
+            sm: "400px",
             lg: "500px",
             xl: "500px",
             "2xl": "500px",
@@ -81,7 +82,7 @@ export const Github1 = () => {
           // align="center"
           src="https://github-readme-stats.vercel.app/api/top-langs/?username=suvam778781&theme=radical" //launguages
         />
-      </Box>
+      </Box> */}
       <Divider />
       <Box w={{ lg: "70%", "2xl": "70%", base: "90%" }} margin={"auto"} my={10}>
         <Text color={"#FFEF03"} fontWeight="semibold">

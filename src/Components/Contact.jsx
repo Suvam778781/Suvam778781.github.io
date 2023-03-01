@@ -161,9 +161,9 @@ function Contact() {
         </Link>
       </HStack>
 
-<Container w="300px" mb="20px" textAlign={"left"}>
-<Text color={"white"} fontWeight={"semibold"} fontSize={"20px"}>Contact: <span style={{fontSize:"15px",fontWeight:"400"}} > +917008369373</span></Text>
-<Text color={"white"} fontWeight={"semibold"} fontSize={"20px"}>Gmail: <span style={{fontSize:"15px",fontWeight:"400"}} > suvamswagatamp@gmail.com</span></Text>
+<Container w="400px" mb="20px" textAlign={"left"}>
+<Text color={"white"} fontWeight={"semibold"} fontSize={"20px"}>Contact: <span  > +917008369373</span></Text>
+<Text color={"white"} fontWeight={"semibold"} fontSize={"20px"}>Gmail: <span  > suvamswagatamp@gmail.com</span></Text>
 </Container>
 
       <Text color={"#FFEF03"} fontWeight="semibold" fontSize={"18px"} pb="20px">

@@ -125,13 +125,13 @@ useEffect(()=>{
         </HStack>
         <Humburger  resume={resume} handlecheck={handlecheck} value={value} />
       </Flex>
-      <Flex display={{sm:"block",md:"flex",lg:"flex"}} backgroundImage={image} backgroundRepeat="no-repeat" h={{base:"700px",md:"550px",lg:"650px",xl:"650px"}} w="100%" margin={"auto"} mb="-20px" mt="50px">
-        <Box  style={{height: "290px" ,marginTop:"40px" }} pl="14px" pt={{sm:"30px"}} w={{sm:"100%",md:"40%",lg:"40%"}} m="auto" justifyContent={"center"} alignItems="center">
+      <Flex display={{sm:"block",md:"flex",lg:"flex"}} backgroundImage={image} backgroundRepeat="no-repeat" h={{base:"700px",md:"550px",lg:"650px",xl:"650px","2xl":"650px"}} w="100%" margin={"auto"} mb="-20px" mt="30px" p={{md:"20px"}}>
+        <Box  style={{height: "290px" ,marginTop:"40px" }} pt={"30px"} w={{sm:"100%",md:"40%",lg:"40%"}} m="auto" justifyContent={"center"} alignItems="center">
           <Image 
           style={{
             boxShadow: "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",
             // position: "relative",
-            margin: "auto",
+            margin:"auto",
             width: "360px",
             height:"360px",
             borderRadius:"14px"  
@@ -184,10 +184,7 @@ export function Humburger({resume,value,handlecheck}) {
             <Image w="140px" src="" />
           </Link>
           <DrawerBody>
-
-          <Switch colorScheme={"#FFEF03"} isChecked={value} onChange={handlecheck}/>
           <br/>
-
             <Link href="#Abouts" onClick={onClose} _hover={{ textDecoration: "none", color: "grey" }}>
               About
             </Link>

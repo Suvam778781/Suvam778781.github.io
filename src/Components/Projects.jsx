@@ -90,11 +90,11 @@ const Projects = () => {
             w={{ md: "60%", lg: "60%", xl: "60%", "2xl": "60%", base: "90%" }}
             margin="auto"
           >
-            <Text fontWeight={"semibold"} textAlign={"center"}>
+            <Text fontWeight={"semibold"}  fontSize="25px" my="5px" textAlign={"center"}>
               Sophera.Com
             </Text>
             <Text fontSize={"13px"} lineHeight="14px" w="90%" m="auto">
-              About This is the clone of Sephora.com. It is an E-commerce
+              This is the clone of Sephora.com. It is an E-commerce
               website which delivers beauty related products. In which we can
               order Skincare, Eyecare, Hairstyle and many more related products
             </Text>
@@ -106,7 +106,7 @@ const Projects = () => {
             <h2>Tech stack- React Js | Chakra Ui | Redux | Redux-Thunk</h2>
             <Box margin={"auto"} textAlign="center" mt="10px">
               <Link
-                href="nemow.vercel.app/"
+                href="https://nemow.vercel.app/"
                 target={"_blank"}
                 fontSize={{ base: "0.8em" }}
                 w="90px"
@@ -183,7 +183,6 @@ const Projects = () => {
                 alt="tripoto"
               />
             </Box>
-
             <Box
               px="12px"
               w={{
@@ -195,8 +194,8 @@ const Projects = () => {
               }}
               margin="auto"
             >
-              <Text fontWeight={"semibold"} margin="auto" textAlign={"center"}>
-                Tripoto
+              <Text fontWeight={"semibold"} margin="auto" fontSize="25px" my="5px" textAlign={"center"}>
+                Tripoto.com
               </Text>
               <Text fontSize={"13px"} lineHeight="14px" w="90%" m="auto">
                 Tripoto is one of the largest communities of Travelers in the
@@ -301,7 +300,7 @@ const Projects = () => {
             w={{ md: "60%", lg: "60%", xl: "60%", "2xl": "60%", base: "90%" }}
             margin="auto"
           >
-            <Text fontWeight={"semibold"} textAlign={"center"}>
+            <Text fontWeight={"semibold"}  backgroundColor="yellow" color fontSize="25px" my="5px" textAlign={"center"}>
               Industrybuying.com
             </Text>
             <Text fontSize={"13px"} lineHeight="14px" w="90%" m="auto">
@@ -312,10 +311,6 @@ const Projects = () => {
             </Text>
             <Divider w="90%" m="auto" pb="15px" />
             <li>
-              Fully responsive HomePage for all three different screen sizes.
-            </li>
-            <li>Single Product Page for each product using dynamic id.</li>
-            <li>
               User and Admin Sign up and Login in page with form validation.
             </li>
             <li>
@@ -323,14 +318,10 @@ const Projects = () => {
               valdation through out all pages.
             </li>
             <li>
-              Admin Dashboard to View, Add, Delete and update all products
-              present in database using Backend apis
-            </li>
-            <li>
-              All the apis are created by using Node JS, Express and MongoDB.
+              Admin Dashboard to View, Add, Delete and update all products.
             </li>
             <h2>
-              Tech stack-React | Redux | Chakra UI | MongoDB | MongoDB Atlas |
+              Tech stack- React | Redux | Chakra UI | MongoDB | MongoDB Atlas |
               Node JS | Express
             </h2>
             <Box margin={"auto"} textAlign="center" mt="10px">
@@ -420,16 +411,13 @@ const Projects = () => {
             w={{ md: "60%", lg: "60%", xl: "60%", "2xl": "60%", base: "90%" }}
             margin="auto"
           >
-            <Text fontWeight={"semibold"} textAlign={"center"}>
+            <Text fontWeight={"semibold"} fontSize="25px" my="5px" textAlign={"center"}>
               Cricket.Com
             </Text>
             <Text fontSize={"13px"} lineHeight="14px" w="90%" m="auto">
               Get live cricket scores, scorecard updates, match schedule,
               predictions & results, stats, latest news & videos of all
-              international, domestic & T20 series. We Created the Sign-in and
-              Sign-up functionality. Created Live news pages and live news video
-              pages also providing functionality like sorting whatever we need
-              click on the option and data will be sorted Good UI with resposive
+              international, domestic & T20 series.
             </Text>
             <Divider w="90%" m="auto" pb="15px" />
             <li>Created the Sign-in and Sign-up functionality.</li>
@@ -441,7 +429,7 @@ const Projects = () => {
             <h2>Tech stack- HTML | CSS | JAVASCRIPT</h2>
             <Box margin={"auto"} textAlign="center" mt="10px">
               <Link
-                href="https://heroic-ice-5830-suvam778781.vercel.app/"
+                href="https://cricket-com-website-clone.vercel.app/"
                 target={"_blank"}
                 fontSize={{ base: "0.8em" }}
                 w="90px"
