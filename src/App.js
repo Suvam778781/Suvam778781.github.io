@@ -8,6 +8,7 @@ import Contact from './Components/Contact';
 import Projects from './Components/Projects';
 import About from './Components/About';
 import { useState } from 'react';
+import Experience from './Components/Experience';
 function App() {
 
   const [background,setbackground]=useState("#2C7598")
@@ -19,6 +20,7 @@ function App() {
   <Github1/>
   <Skills/>
   <Projects/>
+  <Experience/>
   <Contact/>
     </div>
   );

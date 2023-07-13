@@ -29,11 +29,8 @@ import { useEffect } from "react";
 export default function Navbar({resume,image,setbackground,background}) {
 const [value,setvalue]=useState(false)
 const handleRedirect=()=>{
-
-  window.open("https://1drv.ms/b/s!Agy8Y5ocUlKbjTxTJ_rJY8TvltFn?e=OpiAEk")
-  
+  window.open("https://1drv.ms/f/s!Agy8Y5ocUlKbjTrH6AmsKPNFeqJ0?e=bbUna0")
     }
-
 const toast=useToast()
 const handlecheck=(e)=>{
 setvalue(e.target.checked)
@@ -41,7 +38,6 @@ setvalue(e.target.checked)
 useEffect(()=>{
 
   if(value){
-
     setbackground("black")
     toast({
       title: 'Theme.',
@@ -50,7 +46,6 @@ useEffect(()=>{
       duration: 1000,
       isClosable: true,
       // colorScheme:"red",
-  
     })
   }  
   else if(!value){
@@ -120,7 +115,8 @@ useEffect(()=>{
             <Link className="Nav_link" href="#Projects">Projects</Link>
             <Link className="Nav_link" href="#Skills">Skills</Link>
             <Link className="Nav_link" href="#Contacts">Contact</Link>
-            <Link  onClick={handleRedirect} className="Nav_link" href={resume} download="fw20_0118-Suvam-Panda-Resume.pdf">Resume</Link>
+            <Link className="Nav_link" href="#experience">Experiance</Link>
+
           </HStack>
         </HStack>
         <Humburger  resume={resume} handlecheck={handlecheck} value={value} />
@@ -201,9 +197,8 @@ export function Humburger({resume,value,handlecheck}) {
               Contact
             </Link>
             <Divider py={4} />
-            <Link  href={resume}  onClick={onClose}  download="fw20_0118-Suvam-Panda-Resume.pdf" _hover={{ textDecoration: "none", color: "grey" }}>
-          
-              Resume
+            <Link href="#experience" onClick={onClose}_hover={{ textDecoration: "none", color: "grey" }}>
+              Experience
             </Link>
           </DrawerBody>
         </DrawerContent>

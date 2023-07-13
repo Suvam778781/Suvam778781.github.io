@@ -109,7 +109,7 @@ function Contact() {
                 _placeholder={{ color: "#2C7598" }}
                 backgroundColor="#FFEF03"
                 placeholder={"Enter Email..."}
-              required
+              required={true}
               
               />
             </Box>
@@ -121,7 +121,7 @@ function Contact() {
                 _placeholder={{ opacity: 1, color: "#2C7598" }}
                 backgroundColor="#FFEF03"
                 placeholder={"Enter Your Message..."}
-                required
+                required={true}
               />
             </Box>
             <Button type="submit" backgroundColor={"#FFEF03"}>SUBMIT</Button>

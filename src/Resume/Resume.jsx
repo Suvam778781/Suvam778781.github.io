@@ -41,11 +41,11 @@ function Resume(props) {
         delaySpeed={100}
       />
       <Text
-        w="80%"
+        w="90%"
         margin={"auto"}
         color="white"
         fontSize={{
-          base: "10px",
+          base: "9px",
           sm: "10px",
           md: "12px",
           lg: "14px",
@@ -53,11 +53,13 @@ function Resume(props) {
           "2xl": "15px",
         }}
       >
-        I am a web developer with a vast array of knowledge in many different
-        frontend and backend languages, responsive frameworks, database, and
-        best code practices.
+        With 2 months of front-end and back-end development experience at
+        DevRiser LLC, I'm proficient in HTML, CSS, JavaScript, Node.js, and
+        React. Skilled in data structures, algorithms, and database/API
+        integration, I deliver high-quality work with attention to detail. A
+        proactive problem solver and collaborative team player, I'm dedicated to
+        advancing your organization's development goals
       </Text>
-
       <HStack
         h="100px"
         w={{ md: "50%", sm: "50%" }}
@@ -95,21 +97,40 @@ function Resume(props) {
           />
         </Link>
       </HStack>
-
-      <Link
-        fontSize={"16px"}
-        p="9px"
-        w="100px"
-        h="40px"
-        bgColor="white"
-        _hover={{ textDecoration: "none" }}
-        borderRadius={"3px"}
-        color="#2C7598"
-        href={props.resume}
-        download="fw20_0118-Suvam-Panda-Resume.pdf"
+      <Box
+        gap={"20px"}
+        justifyContent={"center"}
+        w={"100%"}
+        display={"flex"}
+        alignContent={"center"}
       >
-        Resume
-      </Link>
+        <Link
+          fontSize={"16px"}
+          p="9px"
+          h="40px"
+          bgColor="white"
+          _hover={{ textDecoration: "none" }}
+          borderRadius={"3px"}
+          color="#2C7598"
+          href={props.resume}
+          download="fw20_0118-Suvam-Panda-Resume.pdf"
+        >
+          Download Resume
+        </Link>
+        <Link
+          fontSize={"16px"}
+          p="9px"
+          h="40px"
+          bgColor="white"
+          _hover={{ textDecoration: "none" }}
+          borderRadius={"3px"}
+          color="#2C7598"
+          target={"_blank"}
+          href={"https://1drv.ms/b/s!Agy8Y5ocUlKbjXYqA1DRQR1FztnP?e=pbIgOW"}
+        >
+          View Resume
+        </Link>
+      </Box>
     </Box>
   );
 }
