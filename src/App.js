@@ -7,20 +7,32 @@ import Skills from './Components/Skills';
 import Contact from './Components/Contact';
 import Projects from './Components/Projects';
 import About from './Components/About';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Experience from './Components/Experience';
 function App() {
 
   const [background,setbackground]=useState("#2C7598")
+  const [scrollPosition, setScrollPosition] = useState(0);
 
+  const handleScroll = () => {
+    const currentPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+    setScrollPosition(currentPosition);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <div style={{backgroundColor:background,overflow:"hidden"}} w="100%"  className="App">
-    <Navbar resume={resume} setbackground={setbackground} background={background} image={suvamimage} />
+    <Navbar scrollPosition={scrollPosition} resume={resume} setbackground={setbackground} background={background} image={suvamimage} />
     <About/>
+  <Experience/>
   <Github1/>
   <Skills/>
   <Projects/>
-  <Experience/>
   <Contact/>
     </div>
   );

@@ -1,4 +1,3 @@
-
 import { HamburgerIcon } from "@chakra-ui/icons";
 
 import {
@@ -18,49 +17,52 @@ import {
   DrawerFooter,
   Drawer,
   useToast,
-  
+  Badge,
 } from "@chakra-ui/react";
 import { Switch } from "@chakra-ui/switch";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Resume from "../Resume/Resume";
-import '../App.css';
+import "../App.css";
 import { useEffect } from "react";
-export default function Navbar({resume,image,setbackground,background}) {
-const [value,setvalue]=useState(false)
-const handleRedirect=()=>{
-  window.open("https://1drv.ms/f/s!Agy8Y5ocUlKbjTrH6AmsKPNFeqJ0?e=bbUna0")
+export default function Navbar({
+  scrollPosition,
+  resume,
+  image,
+  setbackground,
+  background,
+}) {
+  const [value, setvalue] = useState(false);
+  const handleRedirect = () => {
+    window.open("https://1drv.ms/f/s!Agy8Y5ocUlKbjTrH6AmsKPNFeqJ0?e=bbUna0");
+  };
+  const toast = useToast();
+  const handlecheck = (e) => {
+    setvalue(e.target.checked);
+  };
+  console.log(scrollPosition);
+  useEffect(() => {
+    if (value) {
+      setbackground("black");
+      toast({
+        title: "Theme.",
+        description: "Dark Theme Activated",
+        status: "warning",
+        duration: 1000,
+        isClosable: true,
+        // colorScheme:"red",
+      });
+    } else if (!value) {
+      setbackground("#2C7598");
+      toast({
+        title: "Theme.",
+        description: "Light Theme Activated",
+        status: "success",
+        duration: 1000,
+        isClosable: true,
+      });
     }
-const toast=useToast()
-const handlecheck=(e)=>{
-setvalue(e.target.checked)
-}
-useEffect(()=>{
-
-  if(value){
-    setbackground("black")
-    toast({
-      title: 'Theme.',
-      description:"Dark Theme Activated",
-      status: 'warning',
-      duration: 1000,
-      isClosable: true,
-      // colorScheme:"red",
-    })
-  }  
-  else if(!value){
-    setbackground("#2C7598")   
-    toast({
-      title: 'Theme.',
-      description:"Light Theme Activated",
-      status: 'success',
-      duration: 1000,
-      isClosable: true,
-    })
-   
-  }  
-
-},[value])
+  }, [value]);
 
   const btnRef = useRef();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -80,19 +82,29 @@ useEffect(()=>{
           position: "fixed",
           left: "0px",
           right: "0px",
-          top:"0px"
+          top: "0px",
         }}
         backgroundColor="#2C7598"
       >
         <HStack justifyContent={"space-between"} w="90%" m="auto">
           <VStack>
-            <Link fontFamily={"cursive"} fontSize="25px" _hover={{textDecoration:"none",color:"white"}} fontWeight={"bold"} color="#FFEF03" font  display={{
-              base: "none",
-              md: "inherit",
-              lg: "inherit",
-              xl: "inherit",
-              "2xl": "inherit",
-            }}>@Suvam</Link>
+            <Link
+              fontFamily={"cursive"}
+              fontSize="25px"
+              _hover={{ textDecoration: "none", color: "white" }}
+              fontWeight={"bold"}
+              color="#FFEF03"
+              font
+              display={{
+                base: "none",
+                md: "inherit",
+                lg: "inherit",
+                xl: "inherit",
+                "2xl": "inherit",
+              }}
+            >
+              @Suvam
+            </Link>
           </VStack>
           <HStack
             display={{
@@ -111,32 +123,108 @@ useEffect(()=>{
             }}
           >
             {/* <Switch  colorScheme={"#FFEF03"} isChecked={value} onChange={handlecheck}/> */}
-            <Link className="Nav_link"  href="#Abouts">About</Link>
-            <Link className="Nav_link" href="#Projects">Projects</Link>
-            <Link className="Nav_link" href="#Skills">Skills</Link>
-            <Link className="Nav_link" href="#Contacts">Contact</Link>
-            <Link className="Nav_link" href="#experience">Experiance</Link>
-
+            <Link
+              className="Nav_link"
+              color={
+                scrollPosition >= 0 && scrollPosition < 500 ? "#FFEF03" : ""
+              }
+              href="#Abouts"
+            >
+              About
+            </Link>
+            <Link
+              className="Nav_link"
+              color={
+                scrollPosition >= 500 && scrollPosition < 1200 ? "#FFEF03" : ""
+              }
+              href="#experience"
+            >
+              Experiance
+            </Link>
+            <Link
+              className="Nav_link"
+              color={
+                scrollPosition >= 1200 && scrollPosition < 1800 ? "#FFEF03" : ""
+              }
+              href="#github"
+            >
+              Github
+            </Link>
+            <Link
+              className="Nav_link"
+              color={
+                scrollPosition >= 1800 && scrollPosition < 2300 ? "#FFEF03" : ""
+              }
+              href="#Skills"
+            >
+              Skills
+            </Link>
+            <Link
+              className="Nav_link"
+              color={
+                scrollPosition >= 2300 && scrollPosition < 4100 ? "#FFEF03" : ""
+              }
+              href="#Projects"
+            >
+              Projects
+            </Link>
+            <Link
+              className="Nav_link"
+              color={
+                scrollPosition >= 4100 && scrollPosition < 4500 ? "#FFEF03" : ""
+              }
+              href="#Contacts"
+            >
+              Contact
+            </Link>
+            {/* <Badge>{scrollPosition}</Badge> */}
           </HStack>
         </HStack>
-        <Humburger  resume={resume} handlecheck={handlecheck} value={value} />
+        <Humburger resume={resume} handlecheck={handlecheck} value={value} />
       </Flex>
-      <Flex display={{sm:"block",md:"flex",lg:"flex"}} backgroundImage={image} backgroundRepeat="no-repeat" h={{base:"700px",md:"550px",lg:"650px",xl:"650px","2xl":"650px"}} w="100%" margin={"auto"} mb="-20px" mt="30px" p={{md:"20px"}}>
-        <Box  style={{height: "290px" ,marginTop:"40px" }} pt={"30px"} w={{sm:"100%",md:"40%",lg:"40%"}} m="auto" justifyContent={"center"} alignItems="center">
-          <Image 
-          style={{
-            boxShadow: "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",
-            // position: "relative",
-            margin:"auto",
-            width: "360px",
-            height:"360px",
-            borderRadius:"14px"  
-          }}
+      <Flex
+        display={{ sm: "block", md: "flex", lg: "flex" }}
+        backgroundImage={image}
+        backgroundRepeat="no-repeat"
+        h={{
+          base: "700px",
+          md: "550px",
+          lg: "650px",
+          xl: "650px",
+          "2xl": "650px",
+        }}
+        w="100%"
+        margin={"auto"}
+        mb="-20px"
+        mt="30px"
+        p={{ md: "20px" }}
+      >
+        <Box
+          style={{ height: "290px", marginTop: "40px" }}
+          pt={"30px"}
+          w={{ sm: "100%", md: "40%", lg: "40%" }}
+          m="auto"
+          justifyContent={"center"}
+          alignItems="center"
+        >
+          <Image
+            style={{
+              boxShadow:
+                "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",
+              // position: "relative",
+              margin: "auto",
+              width: "320px",
+              height: "320px",
+              borderRadius: "14px",
+            }}
             src="https://i.ibb.co/wMgRJ9F/IMG-20221204-200300-removebg-preview-1.jpg"
             alt="suvam_image"
-        />
-        </Box> 
-        <Box style={{ height: "500px" }} w={{sm:"100%",md:"60%",lg:"60%"}}>
+          />
+        </Box>
+        <Box
+          style={{ height: "500px" }}
+          w={{ sm: "100%", md: "60%", lg: "60%" }}
+        >
           <Resume resume={resume} />
         </Box>
       </Flex>
@@ -144,12 +232,12 @@ useEffect(()=>{
   );
 }
 
-export function Humburger({resume,value,handlecheck}) {
+export function Humburger({ resume, value, handlecheck }) {
   const btnRef = useRef();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <VStack 
+    <VStack
       zIndex={30}
       display={{
         base: "inherit",
@@ -159,7 +247,12 @@ export function Humburger({resume,value,handlecheck}) {
         "2xl": "none",
       }}
     >
-      <IconButton ref={btnRef} backgroundColor="#2C7598"   _hover={{background:"#FFEF03"}} onClick={onOpen}>
+      <IconButton
+        ref={btnRef}
+        backgroundColor="#2C7598"
+        _hover={{ background: "#FFEF03" }}
+        onClick={onOpen}
+      >
         <HamburgerIcon />
       </IconButton>
       <Drawer
@@ -175,30 +268,50 @@ export function Humburger({resume,value,handlecheck}) {
           color="white"
         >
           <DrawerCloseButton />
-        
-          <Link >
+
+          <Link>
             <Image w="140px" src="" />
           </Link>
           <DrawerBody>
-          <br/>
-            <Link href="#Abouts" onClick={onClose} _hover={{ textDecoration: "none", color: "grey" }}>
+            <br />
+            <Link
+              href="#Abouts"
+              onClick={onClose}
+              _hover={{ textDecoration: "none", color: "grey" }}
+            >
               About
             </Link>
-            <Divider py={3}/>
-            <Link href="#Projects" onClick={onClose} _hover={{ textDecoration: "none", color: "grey" }}>
-            Projects
+            <Divider py={4} />
+            <Link
+              href="#experience"
+              onClick={onClose}
+              _hover={{ textDecoration: "none", color: "grey" }}
+            >
+              Experience
             </Link>
             <Divider py={3} />
-            <Link href="#Skills" onClick={onClose} _hover={{ textDecoration: "none", color: "grey" }}>
+            <Link
+              href="#Projects"
+              onClick={onClose}
+              _hover={{ textDecoration: "none", color: "grey" }}
+            >
+              Projects
+            </Link>
+            <Divider py={3} />
+            <Link
+              href="#Skills"
+              onClick={onClose}
+              _hover={{ textDecoration: "none", color: "grey" }}
+            >
               Skills
             </Link>
             <Divider py={4} />
-            <Link href="#Contacts" onClick={onClose}_hover={{ textDecoration: "none", color: "grey" }}>
+            <Link
+              href="#Contacts"
+              onClick={onClose}
+              _hover={{ textDecoration: "none", color: "grey" }}
+            >
               Contact
-            </Link>
-            <Divider py={4} />
-            <Link href="#experience" onClick={onClose}_hover={{ textDecoration: "none", color: "grey" }}>
-              Experience
             </Link>
           </DrawerBody>
         </DrawerContent>
